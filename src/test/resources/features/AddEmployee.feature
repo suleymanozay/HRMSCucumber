@@ -1,22 +1,47 @@
+#Author:syntax team
+@sprint2 @addemployee
 Feature: Add Employee
-Scenario: Adding Employee
-Given I open browser and  navigated to HRMS
-When I enter valid username and valid password
-And I click on login button
-And I click Add Employee Link
-And I fill out all form on add employee page
-Then I successfully added employee
 
-Scenario: Edit peronal details
-Given I  navigated to Employee List
-When I find  new employee
-And I click on employee name
-And I edit employe on personal detail page
-And I fill out all form on personal detail page
-Then I successfully saved
+  Background: 
+    Given I am logged into HRMS
+    And I navigated to Add Employe Page
 
-Scenario: Edit Contact details
-Given I  navigated to Contact details
-When I edit employe contact details
-And I fill out all form on Contact details page
-Then I successfully saved
+  @smoke
+  Scenario: Add new Employee
+    When I add "John", "Jr"  and "Test"
+    And I click Save
+    Then I verify Employee has been succesfully added
+
+  @regression
+  Scenario Outline: Add new Employee
+    When I add "<FirstName>", "<MiddleName>"  and "<LastName>"
+    And I click Save
+    Then I verify Employee with "<FirstName>", "<MiddleName>" and "<LastName>" is displayed
+  
+
+    Examples: 
+      | FirstName | MiddleName | LastName |
+      | Salamon   | Jr         | Salamon  |
+      | Salamo    | Jr         | Salamo   |
+      | Salam     | Jr         | Salam    |
+      | Sala      | Jr         | Sala     |
+
+  Scenario: Add  Employee without employee id
+    WhenWhen I add "<FirstName>", "<MiddleName>"  and "<LastName>"
+    And I delete employee id
+    And I click Save
+    Then I see verify Employee witout id is being added
+   
+
+  Scenario: Add  Employee negative scenario
+    When I click Save
+    Then I see required error message next to the first and last name
+
+
+  Scenario: Add  Employee and Login Credential
+    When I add firstName, middleName and last name
+    And I click on create login checkbox
+    And I enter username, password and confirm password
+    When I click save
+    Then I verify Employee has been succesfully added
+ 

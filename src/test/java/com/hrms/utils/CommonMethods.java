@@ -225,7 +225,7 @@ public class CommonMethods  extends BaseClass{
 	 * @param value
 	 */
 	public static void sendText(WebElement element,String value) {
-		waitForVisibility(element);
+		//waitForVisibility(element);
 		element.clear();
 		element.sendKeys(value);
 	}
@@ -263,7 +263,7 @@ public class CommonMethods  extends BaseClass{
 	 * @param element
 	 */
 	public static void click(WebElement element) {
-		waitForClickability(element);
+		//waitForClickability(element);
 		element.click();
 	}
 	
