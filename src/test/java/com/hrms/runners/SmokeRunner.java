@@ -8,13 +8,13 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = "src/test/resources/features"  // /Login.feature
 		, glue = "com/hrms/steps"
-		, dryRun = true
-		, plugin="pretty"
+		, dryRun = false
+		, plugin= {"pretty","html:target/html/cucumber-default-report"}
 		,monochrome = true
-		//,tags= {"@smoke"}
+		,tags= {"@smoke"}
 		)
 
 
-public class RunnerClass {
+public class SmokeRunner {
 
 }

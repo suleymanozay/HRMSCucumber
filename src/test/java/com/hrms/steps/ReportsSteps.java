@@ -1,12 +1,9 @@
 package com.hrms.steps;
 
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.Select;
-
 import com.hrms.pages.DashboardPageElements;
 import com.hrms.pages.ReportPageElements;
 import com.hrms.utils.CommonMethods;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -35,7 +32,7 @@ public class ReportsSteps extends CommonMethods{
 
 	@Then("I see no record found message")
 	public void i_see_no_record_found_message() {
-		Assert.assertEquals("No Records Found message is not displayed", reports.resullTable.getText(), "No Records Found");
+		Assert.assertEquals("No Records Found message is not displayed", reports.resultTable.getText(), "No Records Found");
 	}
 
 	@When("I enter valid report")

@@ -28,7 +28,7 @@ public class ReportPageElements extends CommonMethods{
 	public WebElement deleteBtn;
 	
 	@FindBy(xpath = "//table[@id='resultTable']/tbody/tr/td")
-	public WebElement resullTable;
+	public WebElement resultTable;
 	
 	@FindBy(id = "ohrmList_chkSelectRecord_5")
 	public WebElement chkListSelect;
@@ -77,19 +77,23 @@ public class ReportPageElements extends CommonMethods{
 	@FindBy(id="employee_name_empName")
 	public WebElement slctfieldEmpName;
 	
+	@FindBy(id="report_gender")
+	public WebElement slctfieldGender;
+	
 	public void addNewReport(String rName) throws InterruptedException {
 		Thread.sleep(1500);
 		click(addBtn);
 		Thread.sleep(1500);
 		sendText(reportName, rName);
 		Select select=new Select( selectCrit);
-		select.selectByValue("employee_name");
+		select.selectByVisibleText("Gender");
 		click(slctCritAdd);
 		Select select1=new Select( selectCritInclude);
 		select1.selectByVisibleText("Current Employees Only");
-		sendText(slctfieldEmpName, "Kobe Kobe");
-		Select select2=new Select(slctDisplayField);
-		select2.selectByValue("display_field_9");
+		Select select2=new Select(slctGender);
+		select2.selectByVisibleText("Male");
+		Select select3=new Select(slctDisplayField);
+		select3.selectByVisibleText("Employee Id");
 		click(displayFieldsAdd);
 		click(checkBox1);
 		click(saveBtn);
