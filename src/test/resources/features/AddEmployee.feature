@@ -19,7 +19,7 @@ Feature: Add Employee
 
     Examples: 
       | FirstName | MiddleName | LastName |
-      | Salamon   | Jr         | Salamon  |
+	      | Salamon   | Jr         | Salamon  |
       | Salamo    | Jr         | Salamo   |
       | Salam     | Jr         | Salam    |
       | Sala      | Jr         | Sala     |
@@ -46,7 +46,7 @@ Feature: Add Employee
   Scenario: Add and Modify Employe Details
     When I enter employee details
       | FirstName | MiddleName | LastName |
-      | Johann    | Sebastian  | Bach     |
+      | Johann    | Sebastian  | Bach1     |
     And I click Save
     And i click on Edit
     Then I am able to modify Employe Details

@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/resources/features"  // /Login.feature
 		, glue = "com/hrms/steps"
 		, dryRun = false
-		, plugin= {"pretty","html:target/html/cucumber-default-report"}
+		,plugin= {"pretty", "html:target/html/cucumber-default-report", "json:target/cucumber.json"}
 		,monochrome = true
 		,tags= {"@smoke"}
 		)
