@@ -176,12 +176,13 @@ public class CommonMethods  extends PageInitiliazer{
 	 * This method will take a screenshot
 	 * @param fileName
 	 */
-	public static String takeScreenshot(String fileName) {
+	public static byte[] takeScreenshot(String fileName) {
 		Date date=new Date();
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy_MMdd_hhmmss");
 		String timeStamp=sdf.format(date.getTime());
 		
 		TakesScreenshot ts=(TakesScreenshot)driver;
+		byte [] picture = ts.getScreenshotAs(OutputType.BYTES);
 		File file=ts.getScreenshotAs(OutputType.FILE);
 		String scrshotFile=Constants.SCREENSHOTS_FILEPATH+fileName+timeStamp+".png";
 		try {
@@ -189,7 +190,7 @@ public class CommonMethods  extends PageInitiliazer{
 		} catch (IOException e) {
 			System.out.println("Cannot take a screenshot");
 		}
-		return scrshotFile;
+		return picture;
 	}
 	/**
 	 * This method will take a screenshot

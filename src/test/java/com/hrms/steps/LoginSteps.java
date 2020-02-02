@@ -17,7 +17,7 @@ public class LoginSteps extends CommonMethods{
 	
 	@Given("I open browser and  navigated to HRMS")
 	public void i_open_browser_and_navigated_to_HRMS() {
-	  BaseClass.setUp();
+	 // BaseClass.setUp();
 	}
 
 	@When("I enter valid username and valid password")
@@ -35,7 +35,7 @@ public class LoginSteps extends CommonMethods{
 
 	@Then("I successfully logged in")
 	public void i_successfully_logged_in() {
-	  System.out.println("I am logged in");
+	Assert.assertTrue(true);
 	  	}
 
 	@When("I enter valid  username and invalid password")
@@ -68,7 +68,7 @@ public void i_enter_and(String username, String password) {
 public void i_see(String errmessage) {
 	waitForVisibility(login.errorMsg);
 	String errMessage=login.errorMsg.getText();
-	 Assert.assertEquals(errMessage,errmessage);
+	 Assert.assertEquals(errmessage,errMessage);
 }
 
 

@@ -42,7 +42,7 @@ Feature: Add Employee
     When I click save
     Then I verify Employee has been succesfully added
 
-  @smoke
+  #@smoke
   Scenario: Add and Modify Employe Details
     When I enter employee details
       | FirstName | MiddleName | LastName |

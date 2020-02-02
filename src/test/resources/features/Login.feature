@@ -4,7 +4,7 @@ Feature: Login
   Background: 
     Given I open browser and  navigated to HRMS
 
-  #@smoke
+  @smoke
   Scenario: Valid Login
     Login using valid credentials
 
@@ -17,11 +17,11 @@ Feature: Login
     When I enter valid  username and invalid password
     And I click on login button
     Then I see error message
-@smoke
+#@smoke
   Scenario Outline: Invalid Login and message validation
     When I enter "<Username>" and  "<Password>" ,
     And I click on login button
-    Then I see "<errormesage>"
+    Then I see "<errormessage>"
 
     Examples: 
       | Username | Password   | errormessage             |
