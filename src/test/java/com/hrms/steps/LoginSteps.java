@@ -35,7 +35,7 @@ public class LoginSteps extends CommonMethods{
 
 	@Then("I successfully logged in")
 	public void i_successfully_logged_in() {
-	Assert.assertTrue(true);
+	Assert.assertTrue(false);
 	  	}
 
 	@When("I enter valid  username and invalid password")

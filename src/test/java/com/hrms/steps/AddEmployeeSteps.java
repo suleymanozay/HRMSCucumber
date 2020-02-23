@@ -20,7 +20,7 @@ public class AddEmployeeSteps extends CommonMethods {
 		login.login(ConfigsReader.getProperty("username"), ConfigsReader.getProperty("password"));
 
 	}
-
+	 
 	@Given("I navigated to Add Employe Page")
 	public void i_navigated_to_Add_Employe_Page() {
 
