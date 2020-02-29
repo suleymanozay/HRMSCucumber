@@ -4,6 +4,8 @@ import cucumber.api.java.en.Given;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import static  io.restassured.RestAssured.*;
+
+import com.hrms.utils.APIConstants;
 import com.hrms.utils.CommonMethods;
 
 public class SyntaxAPIAuthenticationSteps {
@@ -21,11 +23,11 @@ public class SyntaxAPIAuthenticationSteps {
 		
 		response = request
 				.body(CommonMethods
-						.readJson(System.getProperty("user.dir") + "/src/test/resources/JSONFiles/generateToken.json"))
+						.readJson(APIConstants.GENERATE_TOKEN_JSON))
 	   .when().post(generateTokenURI);
 		System.out.println(response.prettyPrint());
-		
-		token=response.jsonPath().get("token");
+
+		token="Bearer "+ response.jsonPath().get("token");
 		System.out.println(token);
 		
 		
