@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 			features = "src/test/resources/features"  // /Login.feature
 			, glue = "com/hrms/steps"
 			, dryRun = false
-			, plugin= {"pretty","html:target/html/cucumber-default-report","json:target/cucumber.json","rerun:target/failed.txt"}
+		, plugin= {"pretty","html:target/html/cucumber-default-report","json:target/cucumber.json","rerun:target/failed.txt"}
 			,monochrome = true
 			,tags= {"@regression"}
 			)

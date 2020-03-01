@@ -7,7 +7,9 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions( features="src/test/resources/features",
 							glue= {"com.hrms.API.steps.practice"},
 							dryRun = false,
-							tags = {"@SyntaxHRMSAPIEndToEnd"}
+							plugin= {"pretty", "html:target/html/cucumber-default-report", "json:target/cucumber.json","rerun:target/failed.txt"}
+							,monochrome = true
+							,tags = {"@Task"}
 									)
 public class APIRunner {
 

@@ -53,6 +53,11 @@
     <version>4.2.0</version>
     <scope>test</scope>
 </dependency>
+<dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160810</version>
+        </dependency>
 
   </dependencies>
   
@@ -64,7 +69,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <includes>
-                        <include>**/*SmokeRunner.java</include>
+                        <include>**/*APIRunner.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
