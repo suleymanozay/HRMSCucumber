@@ -13,7 +13,7 @@ public class JDBCDemo {
 	String dbUsername="syntax_hrm";
 	
 	String dbPassword="syntaxhrm123";
-	//jdbc: type driver: host: port/naem of the database
+	//jdbc: type driver: host: port/name of the database
 	String dbURL="jdbc:mysql://54.167.125.15:3306/syntaxhrm_mysql";
 	
 	@Test

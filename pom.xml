@@ -44,7 +44,7 @@
 <dependency>
     <groupId>net.masterthought</groupId>
     <artifactId>cucumber-reporting</artifactId>
-    <version>4.11.2</version>
+    <version>5.0.0</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 <dependency>
@@ -76,7 +76,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <includes>
-                        <include>**/*APIRunner.java</include>
+                        <include>**/*SmokeRunner.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
@@ -100,7 +100,7 @@
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
                                 <!-- supports wildcard or name pattern -->
-                                <param>**/*.json</param>
+                                <param>**/*cucumber.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>

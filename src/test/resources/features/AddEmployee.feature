@@ -53,3 +53,12 @@ Feature: Add Employee
 			| DriverLicense | ExpirationDate | SSN         | SIN      | Gender | MaritialStatus | Nationality | DOB        |
 			| N78787766     | 2021-12-18     | 123-45-7896 | 78877655 | Male   | Other          | Colombian   | 1980-10-10 |
 			| N78786766     | 2021-12-18     | 123-45-7696 | 78878655 | Female | Married        | Gambian     | 1980-10-10 |
+
+@data
+	Scenario: Add Employee and Validate DataBase
+	When I add "John", "Jr"  and "Test"
+   And I click Save
+   Then I verify Employee has been succesfully added
+   Then I collect employee data from database
+   And I verify employee data is matched
+   

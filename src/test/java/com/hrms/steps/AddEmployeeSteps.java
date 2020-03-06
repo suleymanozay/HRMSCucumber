@@ -12,7 +12,7 @@ import io.cucumber.datatable.DataTable;
 
 public class AddEmployeeSteps extends CommonMethods {
 	
-	String empId;
+	public static String empId;
 
 	@Given("I am logged into HRMS")
 	public void i_am_logged_into_HRMS() {
@@ -33,7 +33,9 @@ public class AddEmployeeSteps extends CommonMethods {
 		sendText(addEmp.firstName, fName);
 		sendText(addEmp.middleName, mName);
 		sendText(addEmp.lastName, lName);
-		empId = addEmp.empId.getText();
+		empId = addEmp.empId.getAttribute("Value");
+
+	
 	}
 
 	@When("I click Save")
@@ -43,8 +45,8 @@ public class AddEmployeeSteps extends CommonMethods {
 
 	@Then("I verify Employee has been succesfully added")
 	public void i_verify_Employee_has_been_succesfully_added() {
-
-		Assert.assertEquals("Employee is NOT being added", pdetails.personalId.getText(), empId);
+		
+		Assert.assertEquals("Employee is NOT being added", pdetails.personalId.getAttribute("Value"), empId);
 	}
 
 	@Then("I verify Employee with {string}, {string} and {string} is displayed")
